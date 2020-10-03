@@ -3,10 +3,6 @@
 
 1. Set the variables in mysent.passwd:
 
----
-
-## Variables
-
 ```bash
 ADDR="" # Sentinel wallet address
 OPER="" # Sentinel validator address
@@ -19,9 +15,9 @@ BOT="" # Telegram bot api from @BotFather
 TGID="" # Telegram Chat ID
 ```
 - To get the Telegram bot API key just talk to @BotFather and set up your own bot.
-- To define your Telegram ID send a message to your newly created bot and open in browser https://api.telegram.org/bot<BOT>/getUpdates. In the json string returned you will find your chat_id.
+- To define your Telegram ID send a message to your newly created bot and open in browser https://api.telegram.org/bot<BOT>/getUpdates - in the json string returned you will find your chat_id.
 
-2. Make the file with your credentials read-only
+2. Make the file with your variables read-only
 
 ```bash
 chmod 400 mysent.passwd
@@ -35,11 +31,11 @@ chmod +x mysent.sh
 
 4. Set up a cron job
 
+```bash
 crontab -u <user> -e
+```
 
----
-
-## Variables
+- Set the full path to the script
 
 ```bash
 # m h  dom mon dow   command
