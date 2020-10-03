@@ -1,0 +1,9 @@
+ADDR="" # Sentinel wallet address
+OPER="" # Sentinel validator address
+NODE="" # Sentinel node name
+PASS="" # Sentinel wallet password
+CLAIM=100 # Minimum rewards amount to withdraw in TSENT
+DELEGATE=1000 # Minimum amount to delegate in TSENT
+
+BOT="" # Telegram bot api from @BotFather
+TGID="" # Telegram Chat ID
