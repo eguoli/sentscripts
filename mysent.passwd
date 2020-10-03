@@ -1,3 +1,4 @@
+GOBIN="" # Sentinel cli folder with full path, ie /root/go/bin
 ADDR="" # Sentinel wallet address
 OPER="" # Sentinel validator address
 NODE="" # Sentinel node name
