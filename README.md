@@ -23,9 +23,9 @@ BOT="" # Telegram bot api from @BotFather
 TGID="" # Telegram Chat ID
 ```
 - To get the Telegram bot API key just talk to @BotFather and set up your own bot.
-- To define your Telegram ID send a message to your newly created bot and open in browser https://api.telegram.org/botINSERTAPIKEY/getUpdates - in the json string returned you will find your chat_id.
+- To define your Telegram ID send a message to your newly created bot and open in browser https://api.telegram.org/botINSERTAPIKEY/getUpdates - in the json string returned you will find your "id".
 
-3. Make the file with your variables read-only
+3. Make the file with your variables not readable for anyone but owner
 
 ```bash
 chmod 400 mysent.passwd
