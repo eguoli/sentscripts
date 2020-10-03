@@ -1,7 +1,14 @@
 # Autodelegate Bash Script For Sentinel (Tendermint) validator node
 > With Notifications via Telegram
 
-1. Set the variables in mysent.passwd:
+1. To use use this script you may need to install additional packages:
+
+```bash
+apt-get install curl jq # Debian/Ubuntu
+yum install curl jq # CentOS
+```
+
+2. Set the variables in mysent.passwd:
 
 ```bash
 GOBIN="" # Sentinel cli folder with full path, ie /root/go/bin
@@ -18,19 +25,19 @@ TGID="" # Telegram Chat ID
 - To get the Telegram bot API key just talk to @BotFather and set up your own bot.
 - To define your Telegram ID send a message to your newly created bot and open in browser https://api.telegram.org/botINSERTAPIKEY/getUpdates - in the json string returned you will find your chat_id.
 
-2. Make the file with your variables read-only
+3. Make the file with your variables read-only
 
 ```bash
 chmod 400 mysent.passwd
 ```
 
-3. Make the main script executable
+4. Make the main script executable
 
 ```bash
 chmod +x mysent.sh
 ```
 
-4. Set up a cron job
+5. Set up a cron job
 
 ```bash
 crontab -u <user> -e
