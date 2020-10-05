@@ -10,8 +10,15 @@ rewards=$($GOBIN/sentinel-hub-cli query distribution rewards $ADDR $OPER --chain
 amount=${rewards%.*}
 
 # Compose message text with emojis in Unicode https://apps.timwhitlock.info/emoji/tables/unicode
-TEXT=""$'\U0001F50B'"%20Voting%20Power:%20$power%0A"
-TEXT+=""$'\U0001F4AB'"%20Rewards:%20"
+TEXT=""$'\U0001F50B'"%20Voting%20Power:%20$power"
+
+# Try to unjail if voting power equal 0
+if [[ $power -eq 0 ]]; then
+        echo $PASS | $GOBIN/sentinel-hub-cli tx slashing unjail --from=$NODE --chain-id sentinel-turing-3a --gas 200000 -y
+        TEXT+="%20"$'\U0001F193'"%20unjail"
+fi
+
+TEXT+="%0A"$'\U0001F4AB'"%20Rewards:%20"
 TEXT+=$(printf %.4f $(echo "$amount/1000000" | bc -l))
 TEXT+=" TSENT"
 
@@ -21,7 +28,7 @@ if (($amount > $CLAIM*1000000)); then
 	TEXT+="%20"$'\U000027A1'"%20withdraw"
 fi
 
-# Wait for tx to be confirmed so we get an updated balance
+# Wait for tx to be confirmed so we get the updated balance
 sleep $SLEEP
 
 # Get available balance
