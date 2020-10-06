@@ -1,4 +1,4 @@
-# Autodelegate Bash Script For Sentinel (Tendermint) validator node
+# Autodelegate Bash Script For Sentinel (Tendermint) Validator Node
 > With Notifications via Telegram
 
 1. To use use this script you may need to install additional packages:
@@ -16,6 +16,7 @@ ADDR="" # Sentinel wallet address
 OPER="" # Sentinel validator address
 NODE="" # Sentinel node name
 PASS="" # Sentinel wallet password
+FEES="0.02" # Set the transaction fees amount in TSENT
 CLAIM=100 # Minimum rewards amount to withdraw in TSENT
 DELEGATE=1000 # Minimum amount to delegate in TSENT
 SLEEP=10 # Wait for N seconds for the transaction to be confirmed so we get an updated balance
